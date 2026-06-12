@@ -21,14 +21,17 @@ API Access: Ensure your network environment permits outbound traffic to required
 Local Installation
 
 1. Clone the repository:
+
    git clone https://github.com/your-username/treasury-ai-label-verification.git
    cd treasury-ai-label-verification
 
-2. Create a virtual environment:
+3. Create a virtual environment:
+
    python -m venv venv
    source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 
-3. Install dependencies:
+5. Install dependencies:
+
    pip install -r requirements.txt
 
 Usage
@@ -41,8 +44,10 @@ Note: The system is designed to handle batch uploads for label applications. Ens
 Configuration
 
 1. Create a copy of the template file:
+
    cp .env.example .env
 
-2. Open the .env file and input your credentials:
+3. Open the .env file and input your credentials:
+
    AI_MODEL_API_KEY=your_key_here
    PROXY_URL=http://your-proxy-address:port
