@@ -36,10 +36,13 @@ Usage
 To run the verification prototype locally:
 python main.py --input-folder ./data/labels
 
-Note: The system is designed to handle batch uploads for label applications. Ensure your sample images are placed in the ./data/labels directory before running.  Why this is the professional standard:
+Note: The system is designed to handle batch uploads for label applications. Ensure your sample images are placed in the ./data/labels directory before running.  
 
-Dependency Management: By using a requirements.txt file and virtual environment, you ensure that the project is "reproducible"—meaning it will work on the reviewer's computer exactly as it works on yours.
+Configuration
 
-Security & Transparency: Mentioning the network/firewall requirement is a proactive "pro" move. It shows you understand the constraints of federal IT infrastructure (like the firewall issues experienced in previous pilots).  
+1. Create a copy of the template file:
+   cp .env.example .env
 
-Ease of Use: Providing a direct command to run the tool makes the prototype accessible immediately, which is vital when you want stakeholders to see results quickly.  
+2. Open the .env file and input your credentials:
+   AI_MODEL_API_KEY=your_key_here
+   PROXY_URL=http://your-proxy-address:port
