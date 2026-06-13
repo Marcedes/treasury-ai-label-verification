@@ -6,6 +6,30 @@ This repository contains a standalone proof-of-concept (PoC) for an AI-powered a
 
 The Alcohol and Tobacco Tax and Trade Bureau (TTB) operates as a critical federal revenue generator, collecting billions annually in excise taxes. This project addresses the operational challenge of transitioning from manual, paper-based legacy verification processes—originally digitized in 2003 [1]—to an automated, AI-assisted architecture. By implementing a human-in-the-loop design, this prototype demonstrates how AI can enhance processing throughput and support compliance agents without compromising the accuracy or regulatory nuance required for federal market oversight.  
 
+## Getting Started
+
+**1. Prerequisites**
+
+Python 3.x
+
+Install necessary libraries
+
+pip install python-dotenv
+
+**2. Configuration**
+
+Create a .env file in the root directory.
+
+Add your API keys:
+
+VISION_API_KEY=your_key_here
+
+**3. Running the Application**
+
+To process label images, use the following command:
+
+python main.py --input-folder ./data/labels
+
 ## Technical Approach & Assumptions
 **Architecture**: A standalone proof-of-concept utilizing a modular design to allow for future .NET or Azure integration.
 
