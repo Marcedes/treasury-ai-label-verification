@@ -22,3 +22,11 @@ To safely modernize the 2003 COLA baseline, the prototype implements a human-in-
 
 ## References
 1. Treasury AI Governance: Label Verification Project Documentation (Internal Discovery Data)
+
+---
+### [ARCHITECTURAL DEVELOPMENT: PLACEHOLDER]
+* **System Component:** Governance/Firmament Layer
+* **Pending Documentation:** - [ ] Detailed technical mapping of fuzzy-match adjudication thresholds.
+    - [ ] Future-state audit trail protocols for treasury reconciliation.
+    - [ ] Integration specs for secondary oversight modules.
+* **Note:** Documentation is awaiting final policy alignment from the governance engine.
