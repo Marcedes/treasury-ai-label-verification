@@ -8,89 +8,82 @@ The Alcohol and Tobacco Tax and Trade Bureau (TTB) operates as a critical federa
 
 ## Getting Started
 
-**1. Prerequisites**
+This project requires a Python 3.10+ environment. Follow these steps to set up your local development environment:
 
-Python 3.x
+**1. Clone and Initialize**
 
-Install necessary libraries
+git clone https://github.com/your-username/treasury-ai-label-verification.git
+cd treasury-ai-label-verification
 
+**2. Environment Setup**
+
+## Create and activate virtual environment
+python -m venv venv
+## On Windows:
+venv\Scripts\activate
+## On macOS/Linux:
+source venv/bin/activate
+
+**3. Dependencies & Configuration**
+
+Install the required packages and configure your credentials:
+
+pip install -r requirements.txt
 pip install python-dotenv
 
-**2. Configuration**
-
-Create a .env file in the root directory.
-
-Add your API keys:
+Create a .env file in the root directory and add your credentials:
 
 VISION_API_KEY=your_key_here
+PROXY_URL=http://your-proxy-address:port
 
-**3. Running the Application**
+Note: The .env file is ignored by Git to ensure security.
 
-To process label images, use the following command:
+**4. Usage**
+
+To process label images, run the following command:
 
 python main.py --input-folder ./data/labels
 
-## Technical Approach & Assumptions
-**Architecture**: A standalone proof-of-concept utilizing a modular design to allow for future .NET or Azure integration.
-
-**Security**: Designed for prototype usage; utilizes environment variables for all API keys to ensure no credentials are stored in source code.
-
-**Assumptions**: The system assumes standard input formats (PDF/JPG) and acknowledges that image-based label verification remains an evolving computer vision challenge.
+Ensure sample images are placed in the ./data/labels directory before running.
 
 ## Project Structure
-The repository is organized to maintain a clean separation between command-line orchestration and AI processing logic:
 
-- `main.py`: The entry point that manages user arguments and input/output flow.
-- `processor.py`: Contains the core logic for image analysis and label verification.
-- `requirements.txt`: Lists all Python dependencies required to run the environment.
-- `/data/labels/`: Reserved directory for batch processing of label images.
+**main.py:** The entry point that manages user arguments and input/output flow.
 
-## Setup and Installation
+**processor.py:** Contains the core logic for image analysis and label verification.
 
-This project requires a Python 3.10+ environment. Follow these steps to configure your local development environment:
+**requirements.txt:** Lists all Python dependencies required to run the environment.
 
-## Prerequisites
+**/data/labels/:** Reserved directory for batch processing of label images.
 
-Python 3.10+
+## Troubleshooting
 
-Git
+**ModuleNotFoundError:** Ensure your virtual environment is activated before installing dependencies.
 
-API Access: Ensure your network environment permits outbound traffic to required ML endpoints.  
+**Execution Policy Errors (Windows):** If PowerShell prevents script execution, run Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process before activating the environment.
 
-## Local Installation
+**Permission Errors:** Ensure your IDE has appropriate disk write permissions for the project directory.
 
-**1. Clone the Repository:**  
+## Technical Approach
 
-   git clone https://github.com/your-username/treasury-ai-label-verification.git
-   cd treasury-ai-label-verification
+**Architecture:** Modular design facilitating future cloud integration.
 
-**2. Create a virtual environment:**  
+**Security:** Employs environment variables to prevent credential leakage.
 
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+**Assumptions:** The system supports standard input formats (JPG/PDF) and assumes a modular pipeline for future OCR engine upgrades.
 
-**3. Install dependencies:**  
+## Project Roadmap & Next Steps
 
-   pip install -r requirements.txt
+**[ ] Engine Integration:** Connect the modular processor to a production-grade Vision Engine (Azure/Google Cloud).
 
-## Usage
+**[ ] Human-in-the-loop Interface:** Develop a UI for compliance agents to verify AI suggestions.
 
-**To run the verification prototype locally:**
+**[ ] Advanced Processing:** Expand capability to support multi-page PDF documents and batch analysis.
 
-python main.py --input-folder ./data/labels
+## License
 
-**Note:** The system is designed to handle batch uploads for label applications. Ensure your sample images are placed in the           ./data/labels directory before running.  
+This project is for assessment purposes. All rights reserved.
 
-## Configuration
-
-**1. Create a copy of the template file:** 
-   cp .env.example .env
-
-**2. Open the .env file and input your credentials:** 
-
-   AI_MODEL_API_KEY=your_key_here
-   PROXY_URL=http://your-proxy-address:port
-   
 ## References
 
-1. TTB Discovery Session Notes (Internal Project Documentation)
+[1] TTB Discovery Session Notes (Internal Project Documentation)
