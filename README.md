@@ -13,6 +13,14 @@ The Alcohol and Tobacco Tax and Trade Bureau (TTB) operates as a critical federa
 
 **Assumptions**: The system assumes standard input formats (PDF/JPG) and acknowledges that image-based label verification remains an evolving computer vision challenge.
 
+## Project Structure
+The repository is organized to maintain a clean separation between command-line orchestration and AI processing logic:
+
+- `main.py`: The entry point that manages user arguments and input/output flow.
+- `processor.py`: Contains the core logic for image analysis and label verification.
+- `requirements.txt`: Lists all Python dependencies required to run the environment.
+- `/data/labels/`: Reserved directory for batch processing of label images.
+
 ## Setup and Installation
 
 This project requires a Python 3.10+ environment. Follow these steps to configure your local development environment:
